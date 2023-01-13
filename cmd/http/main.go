@@ -138,6 +138,7 @@ func main() {
 				os.Exit(1)
 			}
 		}
+	case "none":
 	default:
 		logger.Error(conf.Server.Repo.Driver + " is not allowed")
 		os.Exit(1)
@@ -151,6 +152,7 @@ func main() {
 		txBeginner = txcom.NewGormTxBeginner(gormDB)
 		isolationLvl = txcom.NewGormIsolationLevelSetter()
 		fmt.Println(txBeginner, isolationLvl) // TODO
+	case "none":
 	default:
 		logger.Error(conf.Server.Repo.Driver + " is not allowed")
 		os.Exit(1)
