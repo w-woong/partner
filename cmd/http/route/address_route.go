@@ -13,7 +13,7 @@ import (
 )
 
 func AddressRoute(router *mux.Router, conf common.ConfigHttp,
-	tokenCookie commonport.TokenCookie, parser commonport.IDTokenParser, userSvc commonport.UserSvc,
+	tokenCookie commonport.Cookie, parser commonport.IDTokenParser, userSvc commonport.UserSvc,
 	usc port.AddressFinder) *delivery.AddressHttpHandler {
 
 	handler := delivery.NewAddressHttpHandler(time.Duration(conf.Timeout)*time.Second, usc)
